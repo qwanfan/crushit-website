@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crush It - 隐私政策</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.65;
+            color: #1f2937;
+            background-color: #f4f6f8;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-content h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+        .header-content p { font-size: 1.1rem; opacity: 0.92; }
+        .main-content { padding: 3rem 0; }
+
+        .privacy-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.6rem 1.7rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+        }
+
+        .privacy-section h2 { color: #1d4ed8; margin-bottom: 0.8rem; font-size: 1.45rem; }
+        .privacy-section h3 { color: #334155; margin: 1.1rem 0 0.4rem; font-size: 1.08rem; }
+        .privacy-section p { margin-bottom: 0.75rem; }
+        .privacy-section ul { margin: 0.4rem 0 0.8rem 1.2rem; }
+        .privacy-section li { margin-bottom: 0.35rem; }
+        .privacy-section a { color: #1d4ed8; }
+
+        .highlight-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            margin-top: 0.8rem;
+        }
+
+        .highlight-box h3 { margin-top: 0; color: #1e40af; }
+
+        .last-updated { color: #64748b; font-style: italic; margin-bottom: 1rem; }
+
+        .footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: #1d4ed8;
+            color: white;
+            padding: 0.7rem 1.3rem;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .language-selector { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .language-dropdown { position: relative; display: inline-block; }
+
+        .language-button {
+            background: rgba(255, 255, 255, 0.94);
+            border: 2px solid #1d4ed8;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1d4ed8;
+        }
+
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .language-dropdown-content.show { display: block; }
+        .language-option { width: 100%; border: none; background: white; font: inherit; text-align: left; padding: 0.75rem 1rem; cursor: pointer; display: flex; gap: 0.5rem; }
+        .language-option:hover { background: #f8fafc; }
+        .language-option.active { background: #1d4ed8; color: white; }
+
+        @media (max-width: 768px) {
+            .language-selector { top: 10px; right: 10px; }
+            .header-content h1 { font-size: 1.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <div class="language-dropdown">
+            <button class="language-button" type="button" onclick="toggleLanguageDropdown()" aria-expanded="false">
+                <span id="current-flag">🇨🇳</span>
+                <span id="current-language">简体中文</span>
+                <span>▼</span>
+            </button>
+            <div class="language-dropdown-content" id="language-dropdown">
+                <button type="button" class="language-option active" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans"><span>🇨🇳</span><span>简体中文</span></button>
+                <button type="button" class="language-option" onclick="changeLanguage('en')" data-lang="en"><span>🇺🇸</span><span>English</span></button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 data-i18n="header">Crush It 隐私政策</h1>
+                <p data-i18n="subtitle">截图留在你的手机上</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <p class="last-updated" data-i18n="updated">最后更新：2026 年 10 月 27 日</p>
+            <a href="index.html" class="back-link" data-i18n="backLink">← 返回主页</a>
+
+            <section class="privacy-section">
+                <h2 data-i18n="introTitle">简介</h2>
+                <p data-i18n="introText">Crush It 由北京润智启航科技有限公司提供。本政策说明应用如何处理信息。Crush It 不要求注册账号，也没有自己的用户服务器。</p>
+                <div class="highlight-box">
+                    <h3 data-i18n="promiseTitle">简要说明</h3>
+                    <p data-i18n="promiseText">你选择的截图只在本机用于绘制裂痕，不会被应用上传。免费次数存在本机钥匙串里。跌落检测使用的加速度读数只在当场计算，不保存、不发送。</p>
+                </div>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="notTitle">我们不收集的信息</h2>
+                <ul>
+                    <li data-i18n="not1">姓名、电话、邮箱或账号。除非你主动写信或提交支持表单</li>
+                    <li data-i18n="not2">精确或粗略位置</li>
+                    <li data-i18n="not3">通讯录、日历或短信</li>
+                    <li data-i18n="not4">麦克风录音。应用只播放音效，并遵守静音开关</li>
+                    <li data-i18n="not5">用于广告的标识或跨应用跟踪。应用不展示广告</li>
+                    <li data-i18n="not6">你选中的截图。应用不会把它传到我们的服务器</li>
+                </ul>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="localTitle">只在设备上处理的信息</h2>
+                <h3 data-i18n="photoTitle">你选择的图片</h3>
+                <p data-i18n="photoText">你通过系统照片选择器挑选一张图片作为幕布。图片在本机内存中用于绘制裂痕。关闭或更换图片后，应用不会另外保存一份相册副本，也不会上传。</p>
+                <h3 data-i18n="motionTitle">动作感应</h3>
+                <p data-i18n="motionText">碎屏画面打开时，应用读取加速度计，用来判断手机是否跌落或受到撞击。这些读数在设备上即时使用，不写入文件，也不发送给我们。</p>
+                <h3 data-i18n="usageTitle">免费次数</h3>
+                <p data-i18n="usageText">按压和跌落的已用次数保存在本机钥匙串中，用来记住各自剩余的 2 次免费试用。删除应用会去掉这些记录。</p>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="appleTitle">由 Apple 处理的信息</h2>
+                <p data-i18n="appleText">解锁是一次性 App 内购买，不是订阅。付款、收据和恢复购买由 Apple 的 App Store 处理。我们看不到你的银行卡或完整 Apple 账号。请同时阅读 Apple 的隐私政策。</p>
+                <p><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy/</a></p>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="supportTitle">你主动联系我们时</h2>
+                <p data-i18n="supportText">如果你发送邮件或提交支持表单，我们会收到你填写的姓名、邮箱、主题和内容，只用于回复这次询问。表单由网站托管方 Netlify 接收并转交给我们。请不要在邮件里附上不必要的个人资料或别人的截图。</p>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="useTitle">我们如何使用这些信息</h2>
+                <ul>
+                    <li data-i18n="use1">在你的手机上显示裂痕和碎屏效果</li>
+                    <li data-i18n="use2">记住免费试用是否已经用完</li>
+                    <li data-i18n="use3">通过 Apple 确认一次性解锁是否有效</li>
+                    <li data-i18n="use4">回复你发给我们的支持请求</li>
+                </ul>
+                <p data-i18n="neverText">我们不会出售个人信息，也不会用它投放广告。</p>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="rightsTitle">你的权利</h2>
+                <p data-i18n="rightsText">你可以删除应用来清除本机上的免费次数记录。购买记录由 Apple 保存，可在 App Store 的购买记录中查看。若要查询或删除你通过邮件、表单发给我们的内容，请写信联系我们。欧盟、英国和加州等地的用户，还可以依法要求访问、更正或删除我们实际持有的个人信息。我们不出售个人信息。</p>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="changeTitle">政策变更</h2>
+                <p data-i18n="changeText">如果这项处理方式有实质变化，我们会更新本页，并修改上方的日期。建议购买或继续使用前看一眼本页。</p>
+            </section>
+
+            <section class="privacy-section">
+                <h2 data-i18n="contactTitle">联系我们</h2>
+                <p data-i18n="contactText">隐私问题请发送到：</p>
+                <p><a href="mailto:fancheng_wang@hotmail.com?subject=Crush%20It%20Privacy">fancheng_wang@hotmail.com</a></p>
+                <p data-i18n="contactWho">开发者：北京润智启航科技有限公司</p>
+                <p data-i18n="contactApp">应用名称：Crush It</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footerCopyright">© 2026 Crush It. 保留所有权利。</p>
+            <p><a href="support.html" style="color:white;" data-i18n="footerSupport">获取帮助</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'zh-Hans': {
+                pageTitle: 'Crush It - 隐私政策',
+                languageName: '简体中文',
+                flag: '🇨🇳',
+                header: 'Crush It 隐私政策',
+                subtitle: '截图留在你的手机上',
+                updated: '最后更新：2026 年 10 月 27 日',
+                backLink: '← 返回主页',
+                introTitle: '简介',
+                introText: 'Crush It 由北京润智启航科技有限公司提供。本政策说明应用如何处理信息。Crush It 不要求注册账号，也没有自己的用户服务器。',
+                promiseTitle: '简要说明',
+                promiseText: '你选择的截图只在本机用于绘制裂痕，不会被应用上传。免费次数存在本机钥匙串里。跌落检测使用的加速度读数只在当场计算，不保存、不发送。',
+                notTitle: '我们不收集的信息',
+                not1: '姓名、电话、邮箱或账号。除非你主动写信或提交支持表单',
+                not2: '精确或粗略位置',
+                not3: '通讯录、日历或短信',
+                not4: '麦克风录音。应用只播放音效，并遵守静音开关',
+                not5: '用于广告的标识或跨应用跟踪。应用不展示广告',
+                not6: '你选中的截图。应用不会把它传到我们的服务器',
+                localTitle: '只在设备上处理的信息',
+                photoTitle: '你选择的图片',
+                photoText: '你通过系统照片选择器挑选一张图片作为幕布。图片在本机内存中用于绘制裂痕。关闭或更换图片后，应用不会另外保存一份相册副本，也不会上传。',
+                motionTitle: '动作感应',
+                motionText: '碎屏画面打开时，应用读取加速度计，用来判断手机是否跌落或受到撞击。这些读数在设备上即时使用，不写入文件，也不发送给我们。',
+                usageTitle: '免费次数',
+                usageText: '按压和跌落的已用次数保存在本机钥匙串中，用来记住各自剩余的 2 次免费试用。删除应用会去掉这些记录。',
+                appleTitle: '由 Apple 处理的信息',
+                appleText: '解锁是一次性 App 内购买，不是订阅。付款、收据和恢复购买由 Apple 的 App Store 处理。我们看不到你的银行卡或完整 Apple 账号。请同时阅读 Apple 的隐私政策。',
+                supportTitle: '你主动联系我们时',
+                supportText: '如果你发送邮件或提交支持表单，我们会收到你填写的姓名、邮箱、主题和内容，只用于回复这次询问。表单由网站托管方 Netlify 接收并转交给我们。请不要在邮件里附上不必要的个人资料或别人的截图。',
+                useTitle: '我们如何使用这些信息',
+                use1: '在你的手机上显示裂痕和碎屏效果',
+                use2: '记住免费试用是否已经用完',
+                use3: '通过 Apple 确认一次性解锁是否有效',
+                use4: '回复你发给我们的支持请求',
+                neverText: '我们不会出售个人信息，也不会用它投放广告。',
+                rightsTitle: '你的权利',
+                rightsText: '你可以删除应用来清除本机上的免费次数记录。购买记录由 Apple 保存，可在 App Store 的购买记录中查看。若要查询或删除你通过邮件、表单发给我们的内容，请写信联系我们。欧盟、英国和加州等地的用户，还可以依法要求访问、更正或删除我们实际持有的个人信息。我们不出售个人信息。',
+                changeTitle: '政策变更',
+                changeText: '如果这项处理方式有实质变化，我们会更新本页，并修改上方的日期。建议购买或继续使用前看一眼本页。',
+                contactTitle: '联系我们',
+                contactText: '隐私问题请发送到：',
+                contactWho: '开发者：北京润智启航科技有限公司',
+                contactApp: '应用名称：Crush It',
+                footerCopyright: '© 2026 Crush It. 保留所有权利。',
+                footerSupport: '获取帮助'
+            },
+            en: {
+                pageTitle: 'Crush It - Privacy Policy',
+                languageName: 'English',
+                flag: '🇺🇸',
+                header: 'Crush It Privacy Policy',
+                subtitle: 'Screenshots stay on your iPhone',
+                updated: 'Last updated: October 27, 2026',
+                backLink: '← Back to Home',
+                introTitle: 'Introduction',
+                introText: 'Crush It is provided by 北京润智启航科技有限公司. This policy explains how the app handles information. Crush It does not ask you to create an account, and we do not run a user server for it.',
+                promiseTitle: 'In short',
+                promiseText: 'A screenshot you choose is used on the device to draw cracks and is not uploaded by the app. Free-try counts stay in the device Keychain. Accelerometer readings used to detect a drop are calculated in the moment, then discarded. They are not saved or sent.',
+                notTitle: 'Information we do not collect',
+                not1: 'Your name, phone number, email, or an account, unless you email us or submit the support form',
+                not2: 'Precise or coarse location',
+                not3: 'Contacts, calendars, or messages',
+                not4: 'Microphone recordings. The app only plays sound effects and follows the mute switch',
+                not5: 'Advertising identifiers or cross-app tracking. The app does not show ads',
+                not6: 'The screenshot you select. The app does not send it to our servers',
+                localTitle: 'Information handled only on the device',
+                photoTitle: 'The image you choose',
+                photoText: 'You pick an image with the system photo picker and it becomes the backdrop. The image is kept in memory to draw cracks. The app does not save another copy into your photo library, and it does not upload the image.',
+                motionTitle: 'Motion',
+                motionText: 'While the crack screen is open, the app reads the accelerometer to decide whether the phone dropped or was hit. Those readings are used immediately on the device. They are not written to a file and are not sent to us.',
+                usageTitle: 'Free tries',
+                usageText: 'The number of presses and drops you have used is stored in the device Keychain so the app can remember the 2 free tries for each. Deleting the app removes those records.',
+                appleTitle: 'Information handled by Apple',
+                appleText: 'Unlock is a one-time in-app purchase, not a subscription. Payment, receipts, and restore are handled by Apple’s App Store. We do not see your card or your full Apple Account. Please also read Apple’s privacy policy.',
+                supportTitle: 'When you contact us',
+                supportText: 'If you email us or submit the support form, we receive the name, email, subject, and message you provide, and we use them only to reply. The form is received by our host, Netlify, and forwarded to us. Please do not include unnecessary personal details or someone else’s screenshot.',
+                useTitle: 'How this information is used',
+                use1: 'Show cracks and shatter effects on your iPhone',
+                use2: 'Remember whether the free tries are used up',
+                use3: 'Ask Apple whether the one-time unlock is valid',
+                use4: 'Reply to support requests you send us',
+                neverText: 'We do not sell personal information, and we do not use it for advertising.',
+                rightsTitle: 'Your choices',
+                rightsText: 'Delete the app to remove the free-try records stored on the device. Purchase history is kept by Apple and can be reviewed in the App Store. To ask about or delete a message you sent us by email or the form, write to us. People in the EU, UK, California, and similar regions can also request access, correction, or deletion of personal information we actually hold. We do not sell personal information.',
+                changeTitle: 'Changes',
+                changeText: 'If this handling changes in a meaningful way, we will update this page and the date above. Check this page before you buy or keep using the app.',
+                contactTitle: 'Contact',
+                contactText: 'Privacy questions:',
+                contactWho: 'Developer: 北京润智启航科技有限公司',
+                contactApp: 'App name: Crush It',
+                footerCopyright: '© 2026 Crush It. All rights reserved.',
+                footerSupport: 'Get Help'
+            }
+        };
+
+        function toggleLanguageDropdown() {
+            const menu = document.getElementById('language-dropdown');
+            const open = menu.classList.toggle('show');
+            document.querySelector('.language-button').setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function changeLanguage(lang) {
+            applyLanguage(lang);
+            document.getElementById('language-dropdown').classList.remove('show');
+            document.querySelector('.language-button').setAttribute('aria-expanded', 'false');
+        }
+
+        function applyLanguage(lang) {
+            const current = translations[lang] ? lang : 'zh-Hans';
+            const t = translations[current];
+            document.documentElement.lang = current === 'en' ? 'en' : 'zh-CN';
+            document.title = t.pageTitle;
+            document.getElementById('current-flag').textContent = t.flag;
+            document.getElementById('current-language').textContent = t.languageName;
+            document.querySelectorAll('[data-i18n]').forEach((el) => {
+                const value = t[el.getAttribute('data-i18n')];
+                if (value != null) el.textContent = value;
+            });
+            document.querySelectorAll('.language-option').forEach((option) => {
+                option.classList.toggle('active', option.dataset.lang === current);
+            });
+            localStorage.setItem('crushit-language', current);
+        }
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.language-dropdown')) {
+                document.getElementById('language-dropdown').classList.remove('show');
+            }
+        });
+
+        applyLanguage(localStorage.getItem('crushit-language') || 'zh-Hans');
+    </script>
+</body>
+</html>
