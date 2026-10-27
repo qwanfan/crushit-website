@@ -122,13 +122,22 @@
 
         .note a { color: #1d4ed8; font-weight: 700; }
 
+        .alert-success, .alert-error {
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
         .alert-success {
             background: #dcfce7;
             color: #166534;
             border: 1px solid #bbf7d0;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-top: 1rem;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
         }
 
         .info-grid {
@@ -339,7 +348,10 @@
                     <strong data-i18n="successTitle">已收到你的消息。</strong>
                     <span data-i18n="successText">我们会尽快回复。</span>
                 </div>
-                <form name="crushit-support" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                <div id="form-error" class="alert-error" hidden>
+                    <span data-i18n="errorText">发送失败。请直接发邮件，或稍后再试。</span>
+                </div>
+                <form name="crushit-support" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
                     <input type="hidden" name="form-name" value="crushit-support">
                     <p class="honeypot" aria-hidden="true"><label>Bot <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
                     <div class="form-group">
@@ -442,6 +454,7 @@
                 mailLead: '邮箱：',
                 successTitle: '已收到你的消息。',
                 successText: '我们会尽快回复。',
+                errorText: '发送失败。请直接发邮件，或稍后再试。',
                 labelName: '姓名',
                 labelEmail: '邮箱',
                 labelSubject: '主题',
@@ -506,6 +519,7 @@
                 mailLead: 'Email: ',
                 successTitle: 'We received your message.',
                 successText: 'We will reply as soon as we can.',
+                errorText: 'Could not send the message. Please email us, or try again later.',
                 labelName: 'Name',
                 labelEmail: 'Email',
                 labelSubject: 'Subject',
@@ -567,9 +581,29 @@
             }
         });
 
-        if (new URLSearchParams(location.search).get('sent') === '1') {
-            document.getElementById('form-success').hidden = false;
-        }
+        document.querySelector('form[name="crushit-support"]').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const successMessage = document.getElementById('form-success');
+            const errorMessage = document.getElementById('form-error');
+            const button = form.querySelector('button[type="submit"]');
+            errorMessage.hidden = true;
+            button.disabled = true;
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
+                });
+                if (!response.ok) throw new Error(String(response.status));
+                form.hidden = true;
+                successMessage.hidden = false;
+            } catch (error) {
+                errorMessage.hidden = false;
+            } finally {
+                button.disabled = false;
+            }
+        });
 
         applyLanguage(localStorage.getItem('crushit-language') || 'zh-Hans');
     </script>
