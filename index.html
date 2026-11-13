@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html id="html-root" lang="zh-CN">
+<html id="html-root" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shatter Screen - 把截图变成一块会碎的屏幕</title>
-    <meta name="description" content="Shatter Screen 让你选一张截图当幕布，按住屏幕产生裂痕，或在手机跌落时看整块屏幕碎开。">
+    <title>Shatter Screen - Turn a screenshot into glass you can crack</title>
+    <meta name="description" content="Shatter Screen lets you pick a screenshot as the backdrop, press to crack it, or drop the phone and watch it shatter.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -232,15 +232,15 @@
     <div class="language-selector">
         <div class="language-dropdown">
             <button class="language-button" type="button" onclick="toggleLanguageDropdown()" aria-haspopup="listbox" aria-expanded="false">
-                <span class="language-flag" id="current-flag">🇨🇳</span>
-                <span id="current-language">简体中文</span>
+                <span class="language-flag" id="current-flag">🇺🇸</span>
+                <span id="current-language">English</span>
                 <span>▼</span>
             </button>
             <div class="language-dropdown-content" id="language-dropdown">
-                <button type="button" class="language-option active" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans">
+                <button type="button" class="language-option" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans">
                     <span>🇨🇳</span><span>简体中文</span>
                 </button>
-                <button type="button" class="language-option" onclick="changeLanguage('en')" data-lang="en">
+                <button type="button" class="language-option active" onclick="changeLanguage('en')" data-lang="en">
                     <span>🇺🇸</span><span>English</span>
                 </button>
             </div>
@@ -254,10 +254,10 @@
                     <img src="images/AppIcon.png" alt="Shatter Screen" class="header-icon">
                     Shatter Screen
                 </h1>
-                <p data-i18n="heroText">选一张截图当幕布。按住、跌落，看屏幕裂开。</p>
+                <p data-i18n="heroText">Pick a screenshot as the backdrop. Press, drop, and watch it shatter.</p>
                 <div class="cta-buttons">
-                    <a href="#features" class="btn-primary" data-i18n="ctaLearn">了解更多</a>
-                    <a href="#download" class="btn-primary" data-i18n="ctaDownload">立即下载</a>
+                    <a href="#features" class="btn-primary" data-i18n="ctaLearn">Learn More</a>
+                    <a href="#download" class="btn-primary" data-i18n="ctaDownload">Download</a>
                 </div>
             </div>
         </div>
@@ -266,60 +266,60 @@
     <main class="main-content">
         <div class="container">
             <section id="features" class="feature-section">
-                <h2 data-i18n="featuresTitle">为什么选择 Shatter Screen？</h2>
+                <h2 data-i18n="featuresTitle">Why Shatter Screen?</h2>
                 <div class="features-grid">
                     <article class="feature-card">
                         <div class="feature-icon">👆</div>
-                        <h3 data-i18n="feature1Title">按住出裂痕</h3>
-                        <p data-i18n="feature1Desc">按住屏幕，裂痕从指尖长出来。按得越久，裂得越大。</p>
+                        <h3 data-i18n="feature1Title">Press to crack</h3>
+                        <p data-i18n="feature1Desc">Press and hold. Cracks grow from your fingertip, and they get bigger the longer you hold.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">📉</div>
-                        <h3 data-i18n="feature2Title">跌落就碎</h3>
-                        <p data-i18n="feature2Desc">手机跌落或受到撞击时，整块幕布碎开。</p>
+                        <h3 data-i18n="feature2Title">Drop to shatter</h3>
+                        <p data-i18n="feature2Desc">Drop or bump the phone, and the whole backdrop shatters.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">✨</div>
-                        <h3 data-i18n="feature3Title">双击复原</h3>
-                        <p data-i18n="feature3Desc">双击屏幕，裂痕消失，截图恢复原样。</p>
+                        <h3 data-i18n="feature3Title">Double-tap to restore</h3>
+                        <p data-i18n="feature3Desc">Double-tap to clear the cracks and bring the screenshot back.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🖼️</div>
-                        <h3 data-i18n="feature4Title">用你的截图</h3>
-                        <p data-i18n="feature4Desc">先用侧边键和音量上键截一张屏，再把它选作幕布。三指轻点可以换一张。</p>
+                        <h3 data-i18n="feature4Title">Your screenshot</h3>
+                        <p data-i18n="feature4Desc">Take a screenshot with the side button and volume up, then choose it as the backdrop. Tap with three fingers to pick another.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🔊</div>
-                        <h3 data-i18n="feature5Title">听得见的碎裂</h3>
-                        <p data-i18n="feature5Desc">挤压和碎裂带有音效与震动，并遵守系统静音开关。应用不会录音。</p>
+                        <h3 data-i18n="feature5Title">You can hear it</h3>
+                        <p data-i18n="feature5Desc">Presses and impacts play sound and haptics, and follow the mute switch. The app does not record audio.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🔓</div>
-                        <h3 data-i18n="feature6Title">一次买断</h3>
-                        <p data-i18n="feature6Desc">按压和跌落各可免费试用 2 次。一次购买后即可无限使用，没有订阅。</p>
+                        <h3 data-i18n="feature6Title">One-time unlock</h3>
+                        <p data-i18n="feature6Desc">Try 2 presses and 2 drops for free. One purchase unlocks unlimited use. There is no subscription.</p>
                     </article>
                 </div>
             </section>
 
             <section class="navigation-section">
-                <h2 data-i18n="exploreTitle">探索更多</h2>
-                <p data-i18n="exploreText">获取帮助，或了解隐私政策</p>
+                <h2 data-i18n="exploreTitle">Explore More</h2>
+                <p data-i18n="exploreText">Get help, or read the privacy policy</p>
                 <div class="nav-links">
                     <a href="support.html" class="nav-link">
-                        <h3 data-i18n="navHelpTitle">📚 获取帮助</h3>
-                        <p data-i18n="navHelpDesc">操作说明、常见问题和联系支持</p>
+                        <h3 data-i18n="navHelpTitle">📚 Get Help</h3>
+                        <p data-i18n="navHelpDesc">How it works, common questions, and support</p>
                     </a>
                     <a href="privacy.html" class="nav-link">
-                        <h3 data-i18n="navPrivacyTitle">🔒 隐私政策</h3>
-                        <p data-i18n="navPrivacyDesc">了解截图、动作感应和购买信息如何被处理</p>
+                        <h3 data-i18n="navPrivacyTitle">🔒 Privacy Policy</h3>
+                        <p data-i18n="navPrivacyDesc">How screenshots, motion, and purchases are handled</p>
                     </a>
                 </div>
             </section>
 
             <section id="download" class="download-section">
-                <h2 data-i18n="downloadTitle">开始把屏幕捏碎</h2>
-                <p data-i18n="downloadText">在 App Store 搜索 Shatter Screen，下载到 iPhone 上使用。</p>
-                <p class="download-note" data-i18n="downloadNote">需要 iPhone，系统为 iOS 17 或更高版本。</p>
+                <h2 data-i18n="downloadTitle">Start cracking the screen</h2>
+                <p data-i18n="downloadText">Search for Shatter Screen on the App Store and download it to your iPhone.</p>
+                <p class="download-note" data-i18n="downloadNote">Requires an iPhone with iOS 17 or later.</p>
                 <div class="app-store-badge">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" id="app-store-badge">
                 </div>
@@ -329,12 +329,12 @@
 
     <footer class="footer">
         <div class="container">
-            <p data-i18n="footerCopyright">© 2026 Shatter Screen. 保留所有权利。</p>
+            <p data-i18n="footerCopyright">© 2026 Shatter Screen. All rights reserved.</p>
             <p data-i18n="footerCompany">北京润智启航科技有限公司</p>
             <div class="footer-links">
-                <a href="support.html" data-i18n="footerSupport">支持</a>
-                <a href="privacy.html" data-i18n="footerPrivacy">隐私</a>
-                <a href="mailto:fancheng_wang@hotmail.com" data-i18n="footerContact">联系我们</a>
+                <a href="support.html" data-i18n="footerSupport">Support</a>
+                <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+                <a href="mailto:fancheng_wang@hotmail.com" data-i18n="footerContact">Contact</a>
             </div>
         </div>
     </footer>
@@ -415,7 +415,7 @@
             }
         };
 
-        let currentLanguage = 'zh-Hans';
+        let currentLanguage = 'en';
 
         function toggleLanguageDropdown() {
             const menu = document.getElementById('language-dropdown');
@@ -430,7 +430,7 @@
         }
 
         function applyLanguage(lang) {
-            currentLanguage = translations[lang] ? lang : 'zh-Hans';
+            currentLanguage = translations[lang] ? lang : 'en';
             const t = translations[currentLanguage];
             document.documentElement.lang = currentLanguage === 'en' ? 'en' : 'zh-CN';
             document.title = t.pageTitle;
@@ -453,7 +453,7 @@
             }
         });
 
-        applyLanguage(localStorage.getItem('crushit-language') || 'zh-Hans');
+        applyLanguage(localStorage.getItem('crushit-language') || 'en');
     </script>
 </body>
 </html>
