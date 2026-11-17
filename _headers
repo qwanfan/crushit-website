@@ -3,3 +3,19 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/support
+  Cache-Control: public, max-age=0, must-revalidate
+
+/help
+  Cache-Control: public, max-age=0, must-revalidate
+
+/privacy
+  Cache-Control: public, max-age=0, must-revalidate

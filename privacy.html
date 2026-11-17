@@ -345,6 +345,7 @@
                 option.classList.toggle('active', option.dataset.lang === current);
             });
             localStorage.setItem('crushit-language', current);
+            syncLanguageLinks(current);
         }
 
         document.addEventListener('click', (event) => {
@@ -358,8 +359,38 @@
             if (!raw) return null;
             const normalized = raw.trim().toLowerCase().replace(/_/g, '-');
             if (normalized === 'en' || normalized.startsWith('en-')) return 'en';
-            if (normalized === 'zh' || normalized.startsWith('zh')) return 'zh-Hans';
+            if (
+                normalized === 'zh'
+                || normalized.startsWith('zh')
+                || normalized === 'cn'
+                || normalized === 'chinese'
+            ) {
+                return 'zh-Hans';
+            }
             return null;
+        }
+
+        function languageQueryValue(lang) {
+            return lang === 'en' ? 'en' : 'zh';
+        }
+
+        function syncLanguageLinks(lang) {
+            const queryLang = languageQueryValue(lang);
+            document.querySelectorAll('a[href]').forEach((anchor) => {
+                const href = anchor.getAttribute('href');
+                if (!href || href.startsWith('mailto:') || href.startsWith('http') || href.startsWith('#')) return;
+                const path = href.split('?')[0].split('#')[0];
+                const page = path.split('/').pop() || '';
+                const known = ['index.html', 'support.html', 'privacy.html', 'index', 'support', 'privacy', '', '.', './'];
+                if (!known.includes(page) && path !== '/' && path !== './') return;
+                try {
+                    const url = new URL(href, window.location.href);
+                    url.searchParams.set('lang', queryLang);
+                    anchor.setAttribute('href', url.pathname + url.search + url.hash);
+                } catch (error) {
+                    // ignore invalid href
+                }
+            });
         }
 
         function resolveInitialLanguage() {
