@@ -453,7 +453,20 @@
             }
         });
 
-        applyLanguage(localStorage.getItem('crushit-language') || 'en');
+        function languageFromQuery() {
+            const raw = new URLSearchParams(window.location.search).get('lang');
+            if (!raw) return null;
+            const normalized = raw.trim().toLowerCase().replace(/_/g, '-');
+            if (normalized === 'en' || normalized.startsWith('en-')) return 'en';
+            if (normalized === 'zh' || normalized.startsWith('zh')) return 'zh-Hans';
+            return null;
+        }
+
+        function resolveInitialLanguage() {
+            return languageFromQuery() || localStorage.getItem('crushit-language') || 'en';
+        }
+
+        applyLanguage(resolveInitialLanguage());
     </script>
 </body>
 </html>
